@@ -13,11 +13,13 @@ public class MenuState extends GameState{
 
     private String[] options={
             "Start",
+            "Rules",
             "Help",
             "Quit"
     };
 
     private Color titleColor;
+    private Color colorMenu;
     private Font titleFont;
 
     private Font font;
@@ -30,13 +32,13 @@ public class MenuState extends GameState{
 
         try{
 
-            bg = new Background("/Backgrounds/menubg.gif", 1);
-            bg.setVector(-0.1, 0);
+            bg = new Background("/Backgrounds/menubg.png", 1);
+            bg.setVector(-0.2, 0);
 
-            titleColor = new Color(49, 115, 128);
-            titleFont = new Font("Centery Gothic", Font.PLAIN, 28);
+            titleColor = new Color(247, 255, 239);
+            titleFont = new Font("Modern No. 20", Font.PLAIN, 28);
 
-            font = new Font("Arial", Font.PLAIN, 12);
+            font = new Font("Modern No. 20", Font.PLAIN, 12);
         }
         catch(Exception e){
             e.printStackTrace();
@@ -47,23 +49,23 @@ public class MenuState extends GameState{
         bg.update();
     }
     public void draw(java.awt.Graphics2D g){
-
         bg.draw(g);
-
         g.setColor(titleColor);
         g.setFont(titleFont);
-        g.drawString("The Christmas adventure", 0, 70);
+        g.drawString("The Christmas adventure", 20, 33);
 
 
         g.setFont(font);
         for (int i = 0; i < options.length; i++){
             if (i== currentChoice){
-                g.setColor(Color.BLACK);
+                colorMenu = new Color(252, 255, 76);
+                g.setColor(colorMenu);
             }
             else {
-                g.setColor(Color.blue);
+                colorMenu = new Color(255, 254, 197);
+                g.setColor(colorMenu);
             }
-            g.drawString(options[i], 145,140 + i*15);
+            g.drawString(options[i], 145, 115 + i*15);
         }
     }
 
@@ -72,9 +74,12 @@ public class MenuState extends GameState{
             //start
         }
         if (currentChoice==1) {
-            //help
+            //rules
         }
         if (currentChoice==2) {
+            //help
+        }
+        if (currentChoice==3) {
             System.exit(0);
         }
     }

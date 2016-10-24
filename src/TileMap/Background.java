@@ -18,6 +18,7 @@ public class Background {
 
     private double moveScale;
 
+
     public Background (String s, double ms){
 
         try{
@@ -49,12 +50,13 @@ public class Background {
     public void draw(Graphics2D g){
 
         g.drawImage(image, (int)x,(int)y, null);
-        if (x<0){
-            g.drawImage(image, (int)x + GamePanel.WIDTH,(int)y, null);
-        }
-        if (x>0){
-            g.drawImage(image, (int)x - GamePanel.WIDTH,(int)y, null);
-        }
+            if (x < 0) {
+                g.drawImage(image, (int) x + GamePanel.WIDTH, (int) y, null);
+            }
+            if (x > 0) {
+                g.drawImage(image, (int) x - GamePanel.WIDTH, (int) y, null);
+            }
+
     }
 
 }
