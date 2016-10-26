@@ -9,9 +9,9 @@ public class MenuState extends GameState{
 
     public Background bg;
 
-    private int currentChoice=0;
+    private int currentChoice = 0;
 
-    private String[] options={
+    private String[] options = {
             "Start",
             "Rules",
             "Help",
@@ -71,7 +71,7 @@ public class MenuState extends GameState{
 
     private void select(){
         if (currentChoice==0) {
-            //start
+            gsm.setState(GameStateManager.LEVEL1STATE);
         }
         if (currentChoice==1) {
             //rules

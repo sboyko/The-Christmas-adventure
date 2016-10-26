@@ -1,6 +1,8 @@
 package GameState;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+
 /**
  * Created by Шпакулева on 12.10.2016.
  */
@@ -16,6 +18,7 @@ public class GameStateManager {
         gameStates = new ArrayList<GameState>();
         currentState = MENUSTATE;
         gameStates.add(new MenuState(this));
+        gameStates.add(new Level1State(this));
     }
 
     public void setState(int state){
