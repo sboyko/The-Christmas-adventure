@@ -45,6 +45,10 @@ public class Background {
     public void update(){
         x+=dx;
         y+=dy;
+
+        if (Math.abs(x) >= GamePanel.WIDTH) {
+            x = dx;
+        }
     }
 
     public void draw(Graphics2D g){
